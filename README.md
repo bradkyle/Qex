@@ -15,3 +15,8 @@ engine contains the main logic for the exchange
 common contains common logic
 api contains the api methods for fix, grpc, rest and wss etc.
 analytics contains the main monitoring function for all functionality
+
+
+store uses stateful kubernetes containers with replication for each pod
+
+historic orders (that have been cancelled/removed from view by client) will be stored to redundant storage
