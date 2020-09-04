@@ -1,4 +1,11 @@
 
+// New Account
+
+// Update 2FA
+
+// Update Password
+
+// Verify Email
 
 // Contains common functionality for 
 
