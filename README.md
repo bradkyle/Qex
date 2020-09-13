@@ -20,3 +20,9 @@ analytics contains the main monitoring function for all functionality
 store uses stateful kubernetes containers with replication for each pod
 
 historic orders (that have been cancelled/removed from view by client) will be stored to redundant storage
+
+validation etc is done with the services dir
+
+// TODO add event queue with attributes set for fast reading!!!, group events to be fed into the engine by type and ingress time
+
+// TODO differentiate write and read queries
