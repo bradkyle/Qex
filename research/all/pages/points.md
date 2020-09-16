@@ -61,3 +61,11 @@ Internal triggers
     This gradually strengthens the bond with a product, resulting in the formation of a habit, e.g. our reliance on Facebook or Twitter for instant social connection.
     Designing a habit-forming product requires an understanding of the emotions that are tied to these internal triggers, 
     as well as knowledge of how external triggers can be used effectively to urge a user to perform a certain action.
+
+
+Chapter 3: Action (Phase 2)
+    The Behavior Model developed by Dr. B.J. Fogg of Stanford University says that the user’s behavior (or action) depends on three prerequisites (B = MAT):
+        M – sufficient motivation
+        A – ability to perform a certain action
+        T – a trigger to prompt the action
+        Therefore, for a clear trigger to be effective, the user should be motivated enough and should be able to perform the action with minimal effect.
