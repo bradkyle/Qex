@@ -1,0 +1,1 @@
+Percent of reported crypto volume that is fake: 79.6%
