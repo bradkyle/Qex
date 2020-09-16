@@ -40,3 +40,24 @@ The position of a product on this chart is not static - many habit-forming produ
 Vitamins are products that do not solve an obvious problem, but feel nice to have, while painkillers are products that cater to a very obvious need.
 Many products that are habits for us now because of their perceived utility to us might have been less important to begin with.
 Before we delve further into the Hook Model, an important caveat: In the quest to encourage consumers to form habits, product designers and sellers should not forget that this is a type of manipulation. Conscientious sellers always need to ensure that the habits, or addictions, they encourage are healthy. We will consider this very important aspect a few chapters later.
+
+
+Chapter 2: Trigger (Phase 1)
+    Habits, much like pearls, need a foundation and layer upon layer (of continued behavior change) to be completely formed. Triggers are the cue or the foundation for this behavior change.
+    Triggers can be of two types: external and internal.
+
+External triggers
+    These are bits of information from users’ surroundings that prompt them to perform an action. Types include:
+    Paid triggers – channels like advertising that capture attention, but are too expensive for the long run
+    Earned triggers – continued media presence, like viral video and press mentions, which can be difficult to sustain for any product
+    Relationship triggers – come from engaged users who enthusiastically share information with other potential users
+    Owned triggers – most useful, as these employ tacit permission from users to send triggers like app updates and periodic notifications into their personal space.
+
+Internal triggers
+    For a product to truly become a habit, its triggers need to move from the external forms to the internal.
+    Internal triggers are driven by users’ emotions and associations stored in their memory.
+    Trying to rid oneself of negative emotions like boredom and loneliness are powerful triggers for using a particular product.
+    As a product relieves these negative emotions repeatedly, our mind subconsciously begins to associate it with this relief.
+    This gradually strengthens the bond with a product, resulting in the formation of a habit, e.g. our reliance on Facebook or Twitter for instant social connection.
+    Designing a habit-forming product requires an understanding of the emotions that are tied to these internal triggers, 
+    as well as knowledge of how external triggers can be used effectively to urge a user to perform a certain action.
