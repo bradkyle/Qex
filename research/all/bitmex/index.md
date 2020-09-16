@@ -51,3 +51,32 @@ value of any BitMEX index and excludes all liability for any claimed losses aris
 of any such index.
 
 For further information see the individual index and index weights p
+
+Index Protection Rules
+BitMEX uses several methods to maintain reliable connections to the constituent exchanges. As a fallback the following tests and actions are used:
+
+1 If a constituent exchange is unresponsive, the previous price is used.
+
+2 If a constituent exchange’s price is unchanged for 15 minutes, the constituent is 
+removed from the index until it is operational.
+
+3 (a) For indices with 3 or more constituents: if a constituent price differs from the median 
+constituent price for that index by 25% or more, it is excluded from the index calculation.
+
+3 (b) For indices with only 2 constituents: if a constituent price differs from the median constituent 
+price for that index by 12.5% or more, the last calculated index price will be used. The index is 
+updated once its price differs from the median by less than 12.5%.
+
+3 (c) For an index with only 1 constituent: if the constituent price is 25% away from the last 
+calculated index price, the last calculated index price will be used. The index is updated once 
+the constituent price differs from the last calculated index price by less than 25%.
+
+4 Excluded constituents are added back to their indices when one of the following conditions has 
+been met for a continuous 15 minute period.
+
+4 (a) For indices with 1 or more remaining active constituents, excluding the use of last calculated 
+index price in 3 (c) above, the excluded constituent is within 2% of the median of the remaining 
+active constituents’ prices;
+
+4 (b) For indices with 1 remaining active constituent, using last calculated index price per 3 (c) 
+above, or no remaining active constituents, the excluded constituent is within 25% of the index price.
