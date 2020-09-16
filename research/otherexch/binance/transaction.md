@@ -1,0 +1,12 @@
+transact_id: Option<Uuid>
+account: Option<i64>
+currency: Option<String>
+transact_type: Option<String>
+amount: Option<i64>
+fee: Option<i64>
+transact_status: Option<String>
+address: Option<String>
+tx: Option<String>
+text: Option<String>
+transact_time: Option<DateTime<Utc>>
+timestamp: Option<DateTime<Utc>>

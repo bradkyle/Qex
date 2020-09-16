@@ -1,0 +1,13 @@
+timestamp: DateTime<Utc>
+symbol: String
+open: Option<f64>
+high: Option<f64>
+low: Option<f64>
+close: Option<f64>
+trades: Option<i64>
+volume: Option<i64>
+vwap: Option<f64>
+last_size: Option<i64>
+turnover: Option<i64>
+home_notional: Option<f64>
+foreign_notional: Option<f64>

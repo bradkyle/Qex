@@ -1,0 +1,10 @@
+timestamp: DateTime<Utc>
+symbol: String
+side: Option<Side>
+size: Option<i64>
+price: Option<f64>
+tick_direction: Option<String>
+trd_match_id: Option<Uuid>
+gross_value: Option<i64>
+home_notional: Option<f64>
+foreign_notional: Option<f64>

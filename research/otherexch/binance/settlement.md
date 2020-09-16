@@ -1,0 +1,9 @@
+timestamp: DateTime<Utc>
+symbol: String
+settlement_type: Option<String>
+settled_price: Option<f64>
+option_strike_price: Option<f64>
+option_underlying_price: Option<f64>
+bankrupt: Option<i64>
+tax_base: Option<i64>
+tax_rate: Option<f64>
