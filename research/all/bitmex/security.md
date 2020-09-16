@@ -1,0 +1,126 @@
+BitMEX is committed to the security of its platform and its users. We believe in rigorous, conservative, security measures, and will not compromise security for convenience.
+
+Reporting Security Issues
+Wallet Security
+System Security
+Trading Engine Security
+Communication Security
+Reporting Security Issues
+Please report security issues through our bug bounty program on HackerOne: https://hackerone.com/bitmex
+
+Wallet Security
+BitMEX runs a first-of-its-kind multisignature deposit and withdrawal scheme. All BitMEX addresses are multisignature and all storage is kept offline.
+
+Even in the event of a full system compromise, including web servers, trading engine, and database, there would not be enough keys available to an attacker to steal funds.
+
+Additionally, each and every withdrawal on BitMEX is audited by hand by at least two BitMEX employees before sending. No private keys are kept on any cloud server and deep cold storage is used for the bulk of funds.
+
+All deposit addresses sent by the BitMEX system are verified by an external service to ensure they contain the keys controlled by the founders. If the public keys do not match, the system is shut down immediately and trading is halted.
+
+System Security
+BitMEX systems take advantage of Amazon Web Services’ world-class security.
+
+All BitMEX systems require multiple forms of authentication to access, including hardware tokens. Individual systems are unable to communicate with each other except across approved and monitored channels.
+
+Trading Engine Security
+The BitMEX Trading Engine is the first of its kind. Written in kdb+, a database and toolset used frequently by major banks in high-frequency trading applications, the BitMEX engine has unprecedented speed and reliability.
+
+Rather than use our speed just to execute more transactions per second, BitMEX does a full risk check after each and every order placement, trade, settlement, deposit, and withdrawal. At all times, all accounts in the system must sum to zero. If they do not, trading is immediately halted for all users.
+
+Communication Security
+BitMEX provides optional PGP encryption for all automated emails. If you wish to take advantage of this, please go to the Security Centre of your BitMEX account and insert your PGP public key into the form.
+
+Once PGP encryption is enabled, BitMEX systems will encrypt and sign all automated emails sent you to your account by support@bitmex.com.
+
+If you wish to initiate a conversation with BitMEX, please use the email address and public key on the Technical Contact, not the support@bitmex.com address and key.
+
+If you would like to verify our automated system’s PGP key, here it is:
+
+support@bitmex.com
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=YC96
+-----END PGP PUBLIC KEY BLOCK-----

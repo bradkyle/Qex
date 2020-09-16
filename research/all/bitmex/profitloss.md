@@ -51,6 +51,7 @@ If you have an open position with a realised profit of 10 XBT, this amount will 
 
 If you completely close the same position and you realise a profit of 10 XBT, this 10 XBT will be shown on the Closed Positions tab.
 
-If you then create a new position on the same contract, realised PNL will be reset to 0 XBT on the Open Positions tab. Realised PNL resulting from a partial closure of this new position will be displayed on the Open Positions tab.
+If you then create a new position on the same contract, realised PNL will be reset to 0 XBT on the Open Positions tab. Realised PNL resulting from a partial closure of this new position
+will be displayed on the Open Positions tab.
 
 If you then completely close this new position, any realised PNL will be added to that symbol on the Closed Positions tab.
