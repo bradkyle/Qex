@@ -1,0 +1,1 @@
+https://aws.amazon.com/blogs/awsmarketplace/automating-know-your-customer-workflow-using-a-ready-to-use-model-package-from-aws-marketplace-for-machine-learning/
