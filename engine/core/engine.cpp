@@ -6,8 +6,7 @@
 // Maintain Minimal Local state for speed
 // .model.account
 // .model.inventory 
-// .model.instrument 
-// .model.insurance 
+// .model.instrument  
 // .model.order 
 // set instrument singleton
 
