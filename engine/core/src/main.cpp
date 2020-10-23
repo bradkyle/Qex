@@ -13,7 +13,7 @@ using grpc::Status;
 class EngineServiceImpl final : public Engine::Service {
 
 
-};
+    };
 // set instrument singleton
 
 // Maintain Minimal Local state for speed
