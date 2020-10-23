@@ -86,8 +86,6 @@ class EngineServiceImpl final : public Engine::Service {
 // emit inventory update events (for persistence)
 
 
-
-
 // Egress
 // =================================================================>
 
