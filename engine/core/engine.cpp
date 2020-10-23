@@ -1,5 +1,7 @@
 
 
+
+
 // \l queue
 // Maintain Minimal Local state for speed
 // .model.account
@@ -12,17 +14,21 @@
 // Order ---------------------------------------->
 
 // Place Limit Order
-// 
+// Update the open order loss, 
  
 // Amend Limit Order
-// update a given limit order price, side
+// update a given limit order price, side, available margin
+// etc.
+// emit events, return responses etc.
 
 // Cancel Limit Order
-// update the open order loss of account
+// update the open order loss of account, available margin
+// etc.
 
 // Place Market Order
 // apply fill, update realized pnl where neccessary
-// 
+// unrealized pnl, order margin, liquidate if neccessary
+// ()
 
 // Account ------------------------------------->
 
