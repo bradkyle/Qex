@@ -26,3 +26,16 @@ validation etc is done with the services dir
 // TODO add event queue with attributes set for fast reading!!!, group events to be fed into the engine by type and ingress time
 
 // TODO differentiate write and read queries
+
+Differentiable
+    - Fees
+    - Execution speed
+    - Number of people trading
+    - Insurance fund
+    - Commission
+    - Trading Returns
+    - Front Running
+    - Order Queue length
+    - Slippage
+    - Customer Interaction
+    - 

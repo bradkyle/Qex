@@ -9,4 +9,7 @@
 
 // Get Insolvent Accounts
 
-// 
+//
+
+// api
+// Liquidate[account]
