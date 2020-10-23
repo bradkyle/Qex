@@ -11,16 +11,16 @@ using grpc::ServerContext;
 using grpc::Status;
 
 class EngineServiceImpl final : public Engine::Service {
-
+    // HaltEngine
 
     };
 // set instrument singleton
 
 // Maintain Minimal Local state for speed
-// account
-// inventory 
-// instrument  
-// order 
+// account (full)
+// inventory (open only)
+// instrument (singleton)
+// order (full)
 // set instrument singleton
 
 // Account
@@ -101,12 +101,19 @@ void run() {
                     Event event = batch.get_event(i);
                     switch (event.kind())
                     {
-                        case PLACE_LIMIT_ORDER: // L
-                            /* orderbook->place_market_order() */
+                        case PLACE_LIMIT_ORDER: // (accountId;orderId;size;side;price)
+                            /* if can place market order 
+                            if(orderbook->place_market_order(&res; event)) {
+                                inventory->amend_limit_order(event);
+                                inventory->emit_state(egress_queue); 
+                                account->emit_state(egress_queue);
+                                orderbook->emit_state(egress_queue);                                        
+                            } 
+                            */
                             break;
 
-                        case AMEND_LIMIT_ORDER:
-                            /* if can ammend limit order
+                        case AMEND_LIMIT_ORDER: // (orderId;price;size)
+                            /* if can ammend limit order (price;size)
                                if(account->can_amend_limit_order(&res;event)){
                                     if(orderbook->amend_limit_order(&res; event)) {
                                         inventory->amend_limit_order(event);
@@ -118,45 +125,41 @@ void run() {
                             */
                             break;
 
-                        case CANCEL_LIMIT_ORDER:
-                            /* if can cancel limit order
-                                if (account->can_cancel_limit_order()){
-                                    if(orderbook->amend_limit_order(&res; event)) {
-                                        inventory->amend_limit_order(event);
-                                        inventory->emit_state(egress_queue); 
-                                        account->emit_state(egress_queue);
-                                        orderbook->emit_state(egress_queue);
-                                    }
-                                }
+                        case CANCEL_LIMIT_ORDER: // (orderId)
+                            /* if can cancel limit order 
+                            if(orderbook->amend_limit_order(&res; event)) {
+                                inventory->amend_limit_order(event);
+                                inventory->emit_state(egress_queue); 
+                                account->emit_state(egress_queue);
+                                orderbook->emit_state(egress_queue);
+                            } 
                             */
                             break;
 
-                        case PLACE_MARKET_ORDER: 
-                            /* if can place market order
-                                if (account->can_place_market_order()){
-                                    if(orderbook->place_market_order(&res; event)) {
-                                        inventory->amend_limit_order(event);
-                                        inventory->emit_state(egress_queue); 
-                                        account->emit_state(egress_queue);
-                                        orderbook->emit_state(egress_queue);                                        
-                                    }
-                                }
+                        case PLACE_MARKET_ORDER: // (accountId;orderId;size;side)
+                            /* if can place market order 
+                            if(orderbook->place_market_order(&res; event)) {
+                                inventory->amend_limit_order(event);
+                                inventory->emit_state(egress_queue); 
+                                account->emit_state(egress_queue);
+                                orderbook->emit_state(egress_queue);                                        
+                            } 
                             */
                             break;
 
-                        case UPDATE_ACCOUNT:
+                        case UPDATE_ACCOUNT: // (accountId;state;marginType;positionType;leverage)
                             break;
                         
-                        case UPDATE_INVENTORY:
+                        case UPDATE_INVENTORY: // (accountId;side;leverage)
                             break;
 
-                        case APPLY_SETTLEMENT:
+                        case APPLY_SETTLEMENT: // ()
                             break;
 
-                        case APPLY_FUNDING:
+                        case APPLY_FUNDING: // (fundingRate;fundingType)
                             break;
 
-                        case UPDATE_MARK:
+                        case UPDATE_MARK: // (markPrice)
                             break;
                     
                         default:
