@@ -1,5 +1,3 @@
-
-
 // Contains a futures queue that has a maximum size with its
 // given requests
 
@@ -32,4 +30,6 @@
 
 // Req Batch
 
-// Server
+class Queue {
+
+    };

@@ -1,6 +1,5 @@
 
-
-
+// set instrument singleton
 
 // \l queue
 // Maintain Minimal Local state for speed
@@ -65,3 +64,14 @@
 // emit liquidation to liquidation engine
 // emit account update events (for persistence)
 // emit inventory update events (for persistence)
+int main() {
+    // shared ptr of ingress event queue (used for promises)
+    
+    // shared ptr of egress event queue (used for emitting events)
+
+    // Start Ingress worker thread pool
+
+    // Start Egress worker thread pool
+
+    // start grpc server (requests are added to ingress queue)
+    };
