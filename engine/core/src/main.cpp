@@ -1,13 +1,18 @@
 
 // set instrument singleton
 
-// \l queue
 // Maintain Minimal Local state for speed
-// .model.account
-// .model.inventory 
-// .model.instrument  
-// .model.order 
+// account
+// inventory 
+// instrument  
+// order 
 // set instrument singleton
+
+// Account
+// 
+
+// Server
+// =================================================================>
 
 // Order ---------------------------------------->
 
@@ -65,15 +70,81 @@
 // emit account update events (for persistence)
 // emit inventory update events (for persistence)
 
-void ingress() {
+// Engine
+// =================================================================>
+
+boost::mutex imu_;
+void engine() {
+    try {
+        while (true) {
+            Batch batch = ingress_queue->get_batch();
+            
+            {
+                imu_.lock();
+                BatchResponses res;
+                for(int i=0;i<batch.size();i++) {
+                    Event event = batch.get_event(i);
+                    switch (event.kind())
+                    {
+                        case PLACE_LIMIT_ORDER: // L
+                            /* orderbook->place_market_order() */
+                            break;
+
+                        case AMEND_LIMIT_ORDER:
+                            /* if can ammend limit order
+                               if(orderbook->amend_limit_order(&res; event)) {
+                                   inventory->emit_state(&res) 
+                               }                               
+                            */
+                            break;
+
+                        case CANCEL_LIMIT_ORDER:
+                            /* if can cancel limit order
+                                if() {
+
+                                }
+                            */
+                            break;
+
+                        case PLACE_MARKET_ORDER: 
+                            break;
+
+                        case UPDATE_INVENTORY:
+                            break;
+
+                        case APPLY_SETTLEMENT:
+                            break;
+
+                        case APPLY_FUNDING:
+                            break;
+
+                        case UPDATE_MARK:
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                };
+                imu_.unlock();
+            }
+
+            batch->set_responses();
+        }
+    } catch(std::exception& e) {
 
     };
+    };
+
+
+// Egress
+// =================================================================>
 
 void egress() {
 
     };
 
 int main() {
+    // shared ptr of instrument
 
     // shared ptr of ingress event queue (used for promises)
     
