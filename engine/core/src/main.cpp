@@ -64,12 +64,24 @@
 // emit liquidation to liquidation engine
 // emit account update events (for persistence)
 // emit inventory update events (for persistence)
+
+void ingress() {
+
+    };
+
+void egress() {
+
+    };
+
 int main() {
+
     // shared ptr of ingress event queue (used for promises)
     
     // shared ptr of egress event queue (used for emitting events)
 
-    // Start Ingress worker thread pool
+    // reload state into memory, shared ptr Engine
+
+    // Start Ingress worker thread pool 
 
     // Start Egress worker thread pool
 
