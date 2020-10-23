@@ -1,4 +1,19 @@
+#include <iostream>
+#include <memory>
+#include <string>
 
+#include <grpc++/grpc++.h>
+
+#include "arithmetics.grpc.pb.h"
+using grpc::Server;
+using grpc::ServerBuilder;
+using grpc::ServerContext;
+using grpc::Status;
+
+class EngineServiceImpl final : public Engine::Service {
+
+
+};
 // set instrument singleton
 
 // Maintain Minimal Local state for speed
@@ -74,7 +89,7 @@
 // =================================================================>
 
 boost::mutex imu_;
-void engine() {
+void run() {
     try {
         while (true) {
             Batch batch = ingress_queue->get_batch();
@@ -92,23 +107,46 @@ void engine() {
 
                         case AMEND_LIMIT_ORDER:
                             /* if can ammend limit order
-                               if(orderbook->amend_limit_order(&res; event)) {
-                                   inventory->emit_state(&res) 
-                               }                               
+                               if(account->can_amend_limit_order(&res;event)){
+                                    if(orderbook->amend_limit_order(&res; event)) {
+                                        inventory->amend_limit_order(event);
+                                        inventory->emit_state(egress_queue); 
+                                        account->emit_state(egress_queue);
+                                        emit_state(egress_queue);
+                                    }     
+                                }                          
                             */
                             break;
 
                         case CANCEL_LIMIT_ORDER:
                             /* if can cancel limit order
-                                if() {
-
+                                if (account->can_cancel_limit_order()){
+                                    if(orderbook->amend_limit_order(&res; event)) {
+                                        inventory->amend_limit_order(event);
+                                        inventory->emit_state(egress_queue); 
+                                        account->emit_state(egress_queue);
+                                        orderbook->emit_state(egress_queue);
+                                    }
                                 }
                             */
                             break;
 
                         case PLACE_MARKET_ORDER: 
+                            /* if can place market order
+                                if (account->can_place_market_order()){
+                                    if(orderbook->place_market_order(&res; event)) {
+                                        inventory->amend_limit_order(event);
+                                        inventory->emit_state(egress_queue); 
+                                        account->emit_state(egress_queue);
+                                        orderbook->emit_state(egress_queue);                                        
+                                    }
+                                }
+                            */
                             break;
 
+                        case UPDATE_ACCOUNT:
+                            break;
+                        
                         case UPDATE_INVENTORY:
                             break;
 
