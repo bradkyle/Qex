@@ -70,6 +70,9 @@ class Queue {
 #include "nest.h"
 #include <doctest.h>
 
+// Batching Queue
+// ---------------------------------------------------------------------------------->
+
 TensorNest batch(const std::vector<TensorNest>& tensors, int64_t batch_dim) {
   // TODO(heiner): Consider using accessors and writing slices ourselves.
   try{

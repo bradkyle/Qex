@@ -38,7 +38,7 @@ message NewMarketOrder {
 message UpdateAccount {
     instrumentId
     accountId
-    state
+    state // ok, liquidation, blocked, deleverage etc. 
     marginType
     positionType
     leverage
@@ -46,6 +46,7 @@ message UpdateAccount {
 
 message UpdateInventory {
     instrumentId;
+    state; // ok, liquidation, deleverage
     accountId;
     leverage
 }

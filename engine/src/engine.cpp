@@ -22,6 +22,10 @@ class Engine    {
             orderbook->emit_state(egress_queue);                                        
         } 
         */
+       egress_queue_.push(); // account state
+       egress_queue_.push(); // inventory state
+       egress_queue_.push(); // orderbook update
+       egress_queue_.push(); // new limit order 
     };
 
     bool amend_limit_order() { 
@@ -35,6 +39,11 @@ class Engine    {
                 }     
             }                          
         */
+
+       egress_queue_.push(); // account state
+       egress_queue_.push(); // inventory state
+       egress_queue_.push(); // orderbook update
+       egress_queue_.push(); // amended order 
     };
 
     bool cancel_limit_order() {
@@ -46,6 +55,11 @@ class Engine    {
                 orderbook->emit_state(egress_queue);
             } 
         */
+
+       egress_queue_.push(); // account state
+       egress_queue_.push(); // inventory state
+       egress_queue_.push(); // orderbook update
+       egress_queue_.push(); // new order 
     };
 
     bool place_market_order() {
@@ -57,18 +71,27 @@ class Engine    {
             orderbook->emit_state(egress_queue);                                        
         } 
         */
+       egress_queue_.push(); // account state
+       egress_queue_.push(); // inventory state
+       egress_queue_.push(); // orderbook update
+       egress_queue_.push(); // new order 
     };
 
     bool update_account() {
         
+        egress_queue_.push(); // account update
+        egress_queue_.push(); // inventory update
     };
 
     bool update_inventory() {
-
+        egress_queue_.push(); // account update
+        egress_queue_.push(); // inventory update
     };
 
     bool apply_settlement() {
-
+        egress_queue_.push(); // account update
+        egress_queue_.push(); // inventory update
+        egress_queue_.push(); // instrument upadate
     };
 
     bool apply_funding() {
@@ -145,4 +168,8 @@ class Engine    {
 
     private:
         boost::mutex imu_;
+        BatchingQueue ingress_queue_;
+        boost::lockfree::spsc_queue<int> egress_queue_;
+        // ingress queue
+        // egress queue
 };
