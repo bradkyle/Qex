@@ -1,0 +1,85 @@
+syntax = "proto3";
+package engine;
+
+message PlaceLimitOrder {
+    instrumentId
+    accountId
+    orderId
+    side 
+    price
+    size
+    displaySize
+}
+
+message AmendLimitOrder {
+    instrumentId
+    accountId
+    orderId
+    price
+    size
+    displaySize
+}
+
+message CancelLimitOrder {
+    instrumentId
+    accountId
+    orderId
+}
+
+message NewMarketOrder {
+    instrumentId
+    accountId
+    orderId
+    price
+    size
+    side
+}
+
+message UpdateAccount {
+    instrumentId
+    accountId
+    state
+    marginType
+    positionType
+    leverage
+}
+
+message UpdateInventory {
+    instrumentId;
+    accountId;
+    leverage
+}
+
+message UpdateInstrument {
+    instrumentId
+    markMethod
+    fundingMethod
+}
+
+message ApplySettlement {
+    instrumentId
+    settlement
+}
+
+message ApplyFunding {
+    instrumentId
+    fundingRate
+}
+
+message MarkPrice {
+    instrumentId
+    markPrice
+}
+
+service Engine {
+    rpc PlaceLimitOrder() {}
+    rpc AmendLimitOrder() {}
+    rpc CancelLimitOrder() {}
+    rpc PlaceMarketOrder() {}
+    rpc UpdateAccount() {}
+    rpc UpdateInventory() {}
+    rpc ApplySettlement() {}
+    rpc ApplyFunding() {}
+    rpc UpdateMarkPrice() {}
+    rpc Events() {}
+}
